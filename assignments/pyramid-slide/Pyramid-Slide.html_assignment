@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+            font-weight:normal;
+        }
+        body {
+            font-family: "Courier New", monospace;
+            font-weight:normal;
+            text-align: center;
+        }
+        #slidervalue {
+            display: inline;
+        }
+        input[type=range] {
+            -webkit-appearance: none;
+            margin: 10px 0;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 5px;
+            cursor: pointer;
+            animate: 0.2s;
+            box-shadow: 1px 1px 1px #000000;
+            background: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid #000000;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            height: 20px;
+            width: 17px;
+            border-radius: 25px;
+            background: #a1a5aa;
+            -webkit-appearance: none;
+            margin-top: -7px;
+        }
+        input[type=range]:active::-webkit-slider-thumb {
+            height: 20px;
+            width: 17px;
+            border-radius: 25px;
+            background: #1a1aff;
+            -webkit-appearance: none;
+            margin-top: -7px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pyramid Slide!</h1>
+
+    <br>
+    <form id="draw-form">
+        <label>
+            How high?
+            <input type="range" id="blue" min="0" max="20" step="1" oninput="sliderFunction(this.value)">
+            <p id="slidervalue"></p>
+        </label>
+        <br>
+
+    </form>
+
+    <div id="pyramid"></div>
+
+    <script src="pyramid-slide.js"></script>
+
+</body>
+
+</html>
