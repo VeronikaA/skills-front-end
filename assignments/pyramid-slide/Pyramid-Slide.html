@@ -1,83 +1,85 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         #pyramid {
-            line-height: 0;
+            line-height: 10px;
             font-size: 30px;
+            background-color:#AEA8B2;
+            color: #915A91;
         }
         body {
-            font-family: "Courier New", monospace;
             text-align: center;
+            background-color: #F5F0F4;
         }
-        #slider_value {
-            display: inline;
+        #main {
+          border: 2px solid #69003E;
+          height: 100px;
+          margin-top: 0px;
+          margin-left: 0px;
+          margin-right: 0px;
+          background-color: #EAD6FE;
         }
-input[type=range] {
-    /*removes default webkit styles*/
-    -webkit-appearance: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #dddddd;
-    border: none;
-    border-radius: 3px;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: purple;
-    margin-top: -4px;
-}
-input[type=range]:focus {
-    outline: none;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #cccccc;
-}
+        #height {
+            color: #ABABE0;
+            font-weight: 800;
+            border-radius: 100%;
+        }
+        #pyr {
+            border: 5px solid purple;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        #symbol {
+            border-radius: 5px;
+            weight: 5px;
+        }
+        header {
+            background-color: #9A86AE;
+            color: #ECF0F1;
+            font-family: Courier New;
+            height: 70px;
+        }
+        #rangeHeight{
+            font-weight: 800;
+            font-size: 20px;
+        }
     </style>
-</head>
+</hea
+<body >
+    <header>
+    <h1>Pyramid Slide</h1>
+    </header>
 
-<body>
-
-  <div id="title_banner">
-      <h1>Pyramid Slide</h1>
-      <br>
-  </div>
-
-
-  <form id="draw-form">
-
-    <label>Brick Symbol:</label>
-
-    <select id="brick_symbol" onchange="makePyramid()">
-        <option>#</option>
-        <option>~</option>
-        <option>@</option>
-        <option>X</option>
-        <option>$</option>
-        <option>*</option>
-        <option>+</option>
+    <br>
+<div id="py">
+    <div id="main">
+    <br><br>
+    <label>Brick Symbol: </label>
+    <select id="symbol" onchange="findHeightSymbol(this.value)">
+        <option value="#">#</option>
+        <option value="@">@</option>
+        <option value="X">X</option>
+        <option value="$">$</option>
+        <option value="*">*</option>
     </select>
 
+    &nbsp;&nbsp;&nbsp;&nbsp;
 
     <label>How high?</label>
+    <input id="height" name="height" type="range" oninput="findHeightSymbol(this.value)" min="0" max="20"/>
+    <span id="rangeHeight"></span>
 
-    <input type="range" id="slider"  min="0" max="20"
-      oninput="makePyramid(this.value)"
-      onchange="slider_value.value = slider.value" >
-    <output id="slider_value">0</output>
+</div>
 
-  </form>
+    <br>
+    <br>
+    <br>
 
     <div id="pyramid"></div>
+</div>
+
 
     <script src="pyramid.js"></script>
-
 </body>
 </html>
