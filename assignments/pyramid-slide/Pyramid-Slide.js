@@ -97,12 +97,4 @@ function drawPyramid(height, symbol) {
 }
 
 
-               // create a <p> element with the text inside
-        rowElem = document.createElement("p");
-        rowElem.appendChild(textElem);
-
-               // insert the paragraph as a child of the container <div>
-        document.getElementById("pyramid").appendChild(rowElem);
-
-        }
-}
+    
